@@ -5,8 +5,7 @@
 </head>
 <body>
     <form name="calculator">
-        <input type="text" name="display1" id="display1" oninput="calculate()">
-        <input type="text" name="display2" id="display2" oninput="calculate()">
+        <input type="text" name="display" id="display" oninput="calculate()">
         <br><br>
         <button type="button" onclick="addToDisplay('+')">+</button>
         <button type="button" onclick="addToDisplay('-')">-</button>
@@ -26,27 +25,27 @@
         <button type="button" onclick="addToDisplay('2')">2</button>
         <button type="button" onclick="addToDisplay('1')">1</button>
         <button type="button" onclick="addToDisplay('0')">0</button>
+        
     </form>
     <script>
         function addToDisplay(value) {
-            document.calculator.display1.value += value;
-        }
+    document.calculator.display.value += value;
+}
 
-        function clearDisplay() {
-            document.calculator.display1.value = '';
-            document.calculator.display2.value = '';
-        }
+function clearDisplay() {
+    document.calculator.display.value = '';
+}
 
-        function calculate() {
-            try {
-                const result = eval(document.calculator.display1.value);
-                if (!isNaN(result)) {
-                    document.calculator.display2.value = result;
-                }
-            } catch (error) {
-                document.calculator.display2.value = 'Error';
-            }
+function calculate() {
+    try {
+        const result = eval(document.calculator.display.value);
+        if (!isNaN(result)) {
+            document.calculator.display.value = result;
         }
+    } catch (error) {
+        document.calculator.display.value = 'Error';
+    }
+}
     </script>
 </body>
 </html>
